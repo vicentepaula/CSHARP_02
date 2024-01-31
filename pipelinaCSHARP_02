@@ -1,0 +1,13 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build and Persist') {
+            steps {
+                script {
+                    docker.image('nome_da_imagem').run('-v nome_do_volume:/app')
+                }
+            }
+        }
+    }
+}
