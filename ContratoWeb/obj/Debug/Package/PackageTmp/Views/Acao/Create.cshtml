@@ -1,0 +1,184 @@
+﻿@model ContratoWeb.Models.DominioAcao
+
+@{
+    ViewBag.Title = "Lançamento";
+}
+
+<style>
+
+    fieldset{
+
+       border: 1px black solid; 
+       padding-top:20px;
+       padding-bottom:10px;
+       width:750px;
+    }
+
+    .main, .cancel {
+        font-weight: 800;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: medium;
+    }
+    
+
+    
+
+</style>
+
+<div class="main">
+
+<h2>Lançamento de Valores</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+
+    <hr />
+    <div class="card-01">
+
+
+        <div class="text-01">
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group">
+
+                @Html.LabelFor(model => model.NRO_CONTRATO, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.NRO_CONTRATO, new { htmlAttributes = new { @class = "form-control", disabled = "disabled" } })
+                    @Html.ValidationMessageFor(model => model.NRO_CONTRATO, "", new { @class = "text-danger" })
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.NROEMPRESA, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.NROEMPRESA, new { htmlAttributes = new { @class = "form-control", disabled = "disabled" } })
+                    @Html.ValidationMessageFor(model => model.NROEMPRESA, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.NRO_CONTRATO, htmlAttributes: new { @class = "control-label col-md-2", @Style = "display: none" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.NRO_CONTRATO, new { htmlAttributes = new { @class = "form-control", @Style = "display: none" } })
+            @Html.ValidationMessageFor(model => model.NRO_CONTRATO, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.NROEMPRESA, htmlAttributes: new { @class = "control-label col-md-2", @Style = "display: none" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.NROEMPRESA, new { htmlAttributes = new { @class = "form-control", @Style = "display: none" } })
+            @Html.ValidationMessageFor(model => model.NROEMPRESA, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.NOME_ACAO, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.NOME_ACAO, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.NOME_ACAO, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("NOME DA LOJA", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-2">
+            <div class="form-control">
+                @Html.DropDownList("ListaLojas", "Selecione a loja")
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.OBSERVACAO, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.OBSERVACAO, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.OBSERVACAO, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("FORNECEDOR", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.NomeFonecedorAcao, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.NomeFonecedorAcao, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.VALOR_ACAO, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.VALOR_ACAO, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.VALOR_ACAO, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("SALDO CONTRATO", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.SALDO_CONTRATO, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+            @Html.ValidationMessageFor(model => model.SALDO_CONTRATO, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.DTA_ACAO, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.DTA_ACAO, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.DTA_ACAO, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.NRO_NF, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.NRO_NF, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.NRO_NF, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+       
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.SALDO_CONTRATO, new { htmlAttributes = new { @class = "form-control", @Style = "display: none" } })
+            @Html.ValidationMessageFor(model => model.SALDO_CONTRATO, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="SALVAR" class="btn btn-success" />
+        </div>
+    </div>
+</div>
+ }
+
+</div>
+
+<div class="cancel">
+    @Html.ActionLink("Cancelar", "Index", "Contrato")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

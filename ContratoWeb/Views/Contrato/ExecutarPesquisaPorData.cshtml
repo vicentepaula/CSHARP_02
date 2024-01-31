@@ -1,0 +1,148 @@
+﻿@model IEnumerable<ContratoWeb.Models.DominioContrato>
+
+
+<style>
+    .esconder {
+        display: none;
+        visibility: hidden;
+    }
+
+    .main {
+        font-weight: 800;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+
+    .parag, h3 {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: large;
+        font-weight: 800;
+    }
+
+    h3 {
+        font-size: 30px;
+    }
+</style>
+
+
+<h3>Contratos Arcomix</h3>
+
+<p class="parag">
+    @Html.ActionLink("Pesquisar Contratos", "Pesquisar")
+</p>
+
+<div class="main">
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayName("ID ACAO")
+            </th>
+
+            <th>
+                @Html.DisplayName("CONTRATO")
+            </th>
+            <th class="esconder">
+                @Html.DisplayNameFor(model => model.COD_FORNECEDOR)
+            </th>
+            <th>
+                @Html.DisplayName("LOJA")
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Comprador)
+            </th>
+            <th class="esconder">
+                @Html.DisplayNameFor(model => model.NROEMPRESA)
+            </th>
+            <th class="esconder">
+                @Html.DisplayNameFor(model => model.COD_GESTOR)
+            </th>
+            <th>
+                @Html.DisplayName("VALOR CONTRATO")
+            </th>
+            <th class="esconder">
+                @Html.DisplayNameFor(model => model.NRO_NF)
+            </th>
+            <th>
+                @Html.DisplayName("SALDO CONTRATO")
+            </th>
+            <th class="esconder">
+                @Html.DisplayNameFor(model => model.ID_ACAO)
+            </th>
+            <th>
+                @Html.DisplayName("DATA")
+            </th>
+            <th class="esconder">
+                @Html.DisplayNameFor(model => model.total_contrato)
+            </th>
+            <th class="esconder">
+                @Html.DisplayNameFor(model => model.total_saldo)
+            </th>
+            <th class="esconder">
+                @Html.DisplayNameFor(model => model.saldoZerado)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID_ACAO)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.NRO_CONTRATO)
+                </td>
+                <td class="esconder">
+                    @Html.DisplayFor(modelItem => item.COD_FORNECEDOR)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeEmpresa)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comprador)
+                </td>
+                <td class="esconder">
+                    @Html.DisplayFor(modelItem => item.NROEMPRESA)
+                </td>
+                <td class="esconder">
+                    @Html.DisplayFor(modelItem => item.COD_GESTOR)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VALOR_CONTRATO)
+                </td>
+                <td class="esconder">
+                    @Html.DisplayFor(modelItem => item.NRO_NF)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SALDO)
+                </td>
+                <td class="esconder">
+                    @Html.DisplayFor(modelItem => item.ID_ACAO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DTA_CONTRATO)
+                </td>
+                <td class="esconder">
+                    @Html.DisplayFor(modelItem => item.total_contrato)
+                </td>
+                <td class="esconder">
+                    @Html.DisplayFor(modelItem => item.total_saldo)
+                </td>
+                <td class="esconder">
+                    @Html.DisplayFor(modelItem => item.saldoZerado)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Details", new { ID = item.ID_ACAO }) |
+                    @Html.ActionLink("Detalhes", "Details", "Acao", new { ID = item.ID_ACAO }, htmlAttributes: null) |
+                    @Html.ActionLink("Retiradas", "ListaAcoes", "Acao", new { NR = item.NRO_CONTRATO }, htmlAttributes: null)
+
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

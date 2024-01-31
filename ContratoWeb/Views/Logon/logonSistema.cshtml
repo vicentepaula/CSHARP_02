@@ -1,0 +1,71 @@
+﻿@model ContratoWeb.Models.usuario.DominioLogon
+
+<style>
+
+    .card-login {
+       
+        font-weight: 600;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    #nom {
+        
+        font-size: larger;
+    }
+
+    #idmo, #idmoc {
+        font-size: large;
+        padding-right: 30px;
+    }
+</style>
+
+
+@using (Html.BeginForm("logonSistema","Logon", new {ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="main">
+        
+        <div class="form-horizontal">
+            <div class="card-login">
+                <h2>Entre com suas credencias</h2>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.nome, htmlAttributes: new { @class = "control-label col-md-2", @id = "nom" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.nome, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.nome, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.senha, htmlAttributes: new { @class = "control-label col-md-2", @id = "idmo" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.senha, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.senha, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.confirmarSenha, htmlAttributes: new { @class = "control-label col-md-2", @id = "idmoc", @Style = "display: none" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.confirmarSenha, new { htmlAttributes = new { @class = "form-control", @Style = "display: none", @Value="123"} })
+                        @Html.ValidationMessageFor(model => model.confirmarSenha, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Entrar" class="btn btn-success" />
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

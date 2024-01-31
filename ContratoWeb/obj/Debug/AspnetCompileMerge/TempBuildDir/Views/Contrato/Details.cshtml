@@ -1,0 +1,173 @@
+﻿@model ContratoWeb.Models.DominioContrato
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<style>
+
+    .esconder {
+        display: none;
+        visibility: hidden
+    }
+
+    .main {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 16px;
+    }
+
+    .parag {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: large;
+        font-weight: 800;
+    }
+
+</style>
+
+
+<h2>Detalhes do contrato</h2>
+
+<div class ="main">
+
+    <h3>Voce realmente deseja usar este contrato ?</h3>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayName("NRO CONTRATO")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NRO_CONTRATO)
+       </dd>
+
+        <dt class="esconder">
+            @Html.DisplayNameFor(model => model.COD_FORNECEDOR)
+        </dt>
+
+        <dd class="esconder">
+            @Html.DisplayFor(model => model.COD_FORNECEDOR)
+            
+        </dd>
+
+        <dt>
+            @Html.DisplayName("LOJA")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeEmpresa)
+        </dd>
+
+        <dt  class="esconder">
+            @Html.DisplayName("FORNECEDOR")
+        </dt>
+
+        <dd  class="esconder">
+            @Html.DisplayFor(model => model.NomeFonecedor)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("COMPRADOR")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comprador)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NROEMPRESA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NROEMPRESA)
+        </dd>
+
+        <dt class="esconder">
+            @Html.DisplayNameFor(model => model.COD_GESTOR)
+        </dt>
+
+        <dd class="esconder">
+            @Html.DisplayFor(model => model.COD_GESTOR)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("VALOR CONTRATO")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VALOR_CONTRATO)
+        </dd>
+
+        <dt  class="esconder">
+            @Html.DisplayName("NRO NF")
+        </dt>
+
+        <dd  class="esconder">
+            @Html.DisplayFor(model => model.NRO_NF)
+        </dd>
+
+        <dt  class="esconder">
+            @Html.DisplayName("NOME AÇÃO")
+        </dt>
+
+        <dd  class="esconder">
+            @Html.DisplayFor(model => model.NOME_ACAO)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("SALDO")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SALDO)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("ID AÇÃO")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_ACAO)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("DATA CONTRATO")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DTA_CONTRATO)
+        </dd>
+
+        <dt class="esconder">
+            @Html.DisplayNameFor(model => model.total_contrato)
+        </dt>
+
+        <dd class="esconder">
+            @Html.DisplayFor(model => model.total_contrato)
+        </dd>
+
+        <dt class="esconder">
+            @Html.DisplayNameFor(model => model.total_saldo)
+        </dt>
+
+        <dd class="esconder">
+            @Html.DisplayFor(model => model.total_saldo)
+        </dd>
+
+        <dt class="esconder">
+            @Html.DisplayNameFor(model => model.saldoZerado)
+        </dt>
+
+        <dd class="esconder">
+            @Html.DisplayFor(model => model.saldoZerado)
+        </dd>
+
+    </dl>
+
+</div>
+
+<p class="parag">
+    @Html.ActionLink("Confirmar", "Create", "Acao", new { id = Model.ID_ACAO }, htmlAttributes: null)
+    |
+    @Html.ActionLink("Voltar", "Index")
+</p>

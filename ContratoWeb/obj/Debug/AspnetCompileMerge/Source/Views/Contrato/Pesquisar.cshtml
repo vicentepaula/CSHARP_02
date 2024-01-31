@@ -1,0 +1,125 @@
+﻿@model ContratoWeb.Models.DominioContrato
+
+
+<style>
+
+    .main, .voltar, #idnome, #idnro {
+        font-weight: 800;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    #idta {
+        margin-left: 196px;
+    }
+
+    .checagem {
+        margin-bottom: 15px;
+    }
+</style>
+
+@using (Html.BeginForm("ExecutarPesquisa", "Contrato", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+
+        <div class="main">
+
+            <h2>Pesquisa de contratos não lançados</h2>
+
+            <hr />
+
+            <h3>Numero de contrato</h3>
+            <hr />
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.Label("Numero do Contrato", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.NRO_CONTRATO, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.NRO_CONTRATO, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Pesquisar" class="btn btn-success" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+
+<hr />
+
+
+
+
+
+@using (Html.BeginForm("ExecutarPesquisaPorData", "Contrato", FormMethod.Post))
+{
+        @Html.AntiForgeryToken()
+
+    <div class="main">
+
+        <div class="form-horizontal">
+
+            <h2>Pesquisa de contratos lançados</h2>
+
+           
+
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="checagem">
+            <h3>Pesquisa por data</h3>
+            <hr />
+
+            <span>Incluir contratos com Saldo Zero :</span>
+            @Html.CheckBoxFor(model => model.checagem, new { @class = "onoffswitch-checkbox", @id = "control" })
+            @Html.ValidationMessageFor(model => model.checagem, "", new { @class = "text-danger" })
+
+        </div>
+
+
+            <div class="form-group">
+
+                @Html.Label("Data Inical", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.dtainicial, new { htmlAttributes = new { @class = "form-control", @id = "dta_ini" } })
+                    @Html.ValidationMessageFor(model => model.dtainicial, "", new { @class = "text-danger" })
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Data Final", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.dtaFinal, new { htmlAttributes = new { @class = "form-control", @id = "dta_final" } })
+                    @Html.ValidationMessageFor(model => model.dtaFinal, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Pesquisar" class="btn btn-success" id="btn_psqdta" />
+                </div>
+            </div>
+        </div>
+     
+    </div>
+
+}
+
+
+<div class ="voltar">
+    @Html.ActionLink("Voltar", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

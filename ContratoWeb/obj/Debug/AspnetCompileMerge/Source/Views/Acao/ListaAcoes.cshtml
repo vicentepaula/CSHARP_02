@@ -1,0 +1,128 @@
+﻿@model IEnumerable<ContratoWeb.Models.DominioAcao>
+
+@{
+    ViewBag.Title = "Movimentações";
+}
+
+<style>
+    .esconder {
+        display: none;
+        visibility: hidden;
+    }
+
+
+    .main {
+        font-weight: 800;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+
+    .parag, h3 {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: large;
+        font-weight: 800;
+    }
+
+    h3 {
+        font-size: 30px;
+    }
+
+
+
+</style>
+
+
+<div class="main">
+
+    <h3>Movimentações</h3>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayName("CONTRATO")
+            </th>
+            <th>
+                @Html.DisplayName("ID AÇÃO")
+            </th>
+            <th>
+                @Html.DisplayName("NRO LOJA")
+            </th>
+            <th>
+                @Html.DisplayName("ACAO")
+            </th>
+            <th>
+                @Html.DisplayName("LOJA")
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OBSERVACAO)
+            </th>
+            <th>
+                @Html.DisplayName("FORNECEDOR")
+            </th>
+            <th>
+                @Html.DisplayName("VALOR AÇÃO")
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DTA_ACAO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NRO_NF)
+            </th>
+            <th class="esconder">
+                @Html.DisplayNameFor(model => model.ID_CONTRATO)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NRO_CONTRATO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID_ACAO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NROEMPRESA)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NOME_ACAO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeEmpresa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OBSERVACAO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeFonecedorAcao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VALOR_ACAO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DTA_ACAO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NRO_NF)
+                </td>
+                <td class="esconder">
+                    @Html.DisplayFor(modelItem => item.ID_CONTRATO)
+                </td>
+                <td>
+
+                    @Html.ActionLink("Detalhes", "Details", new { ID = item.ID_ACAO })
+
+                </td>
+            </tr>
+        }
+
+    </table>
+
+</div>
+
+<div class="parag">
+    @Html.ActionLink("Voltar", "Index", "Contrato")
+</div>
+

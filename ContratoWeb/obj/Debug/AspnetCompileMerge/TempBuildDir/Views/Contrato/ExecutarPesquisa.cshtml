@@ -1,0 +1,131 @@
+﻿@model IEnumerable<ContratoWeb.Models.DominioContrato>
+
+
+
+<style>
+    .esconder {
+        display: none;
+        visibility: hidden;
+    }
+
+    .main {
+
+        font-weight: 800;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    .pesqu {
+        font-size:19px;
+        font-weight: 800;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    .vol {
+        font-size: 19px;
+        font-weight: 800;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+</style>
+
+
+<p class="pesqu">
+    @Html.ActionLink("Pesquisar Contratos", "Pesquisar")
+</p>
+
+<div class="main">
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NRO_CONTRATO)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.NomeFonecedor)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.NROEMPRESA)
+            </th>
+
+            <th class="esconder">
+                @Html.DisplayNameFor(model => model.COD_FORNECEDOR)
+            </th>
+
+            <th class="esconder">
+                @Html.DisplayNameFor(model => model.COD_GESTOR) 
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.VALOR_CONTRATO)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.NOME_ACAO)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.DTA_CONTRATO)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.COMPRADOR)
+            </th>
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NRO_CONTRATO)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeFonecedor)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.NROEMPRESA)
+                </td>
+
+
+                <td class="esconder">
+                    @Html.DisplayFor(modelItem => item.COD_FORNECEDOR)
+                </td>
+
+                <td class="esconder">
+                    @Html.DisplayFor(modelItem => item.COD_GESTOR)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.VALOR_CONTRATO)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.NOME_ACAO)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.DTA_CONTRATO)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comprador)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Lançamento", "Lancamento", new { nrocont = item.NRO_CONTRATO, nroloja = item.NROEMPRESA, vlrcont = item.VALOR_CONTRATO }, null)
+
+                </td>
+            </tr>
+        }
+
+    </table>
+
+</div>
+<div class="vol">
+    @Html.ActionLink("Voltar", "Index")
+</div>

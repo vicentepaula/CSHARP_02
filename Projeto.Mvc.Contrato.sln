@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32228.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContratoWeb", "ContratoWeb\ContratoWeb.csproj", "{1FEAF93B-4148-4C3A-A85F-4FE31703493D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1FEAF93B-4148-4C3A-A85F-4FE31703493D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FEAF93B-4148-4C3A-A85F-4FE31703493D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FEAF93B-4148-4C3A-A85F-4FE31703493D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FEAF93B-4148-4C3A-A85F-4FE31703493D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {277E827A-389A-4F7C-AEBC-356D090FA77C}
+	EndGlobalSection
+EndGlobal

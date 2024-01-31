@@ -1,0 +1,108 @@
+﻿@model ContratoWeb.Models.DominioAcao
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<style>
+
+    
+    .main {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 16px;
+    }
+
+    .parag {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: large;
+        font-weight: 800;
+    }
+</style>
+
+
+<div class="main">
+
+    <h2>Detalhes do lançamento</h2>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NRO_CONTRATO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NRO_CONTRATO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ID_ACAO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_ACAO)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeEmpresa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeEmpresa)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeFonecedorAcao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeFonecedorAcao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VALOR_ACAO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VALOR_ACAO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OBSERVACAO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OBSERVACAO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DTA_ACAO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DTA_ACAO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NRO_NF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NRO_NF)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOME_ACAO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOME_ACAO)
+        </dd>
+
+    </dl>
+</div>
+<p class="parag">
+
+    @Html.ActionLink("Voltar", "Index", "Contrato")
+</p>

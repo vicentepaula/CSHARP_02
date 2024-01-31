@@ -1,0 +1,128 @@
+﻿@model ContratoWeb.Models.DominioContrato
+
+<style>
+
+    .main {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 16px;
+    }
+
+    .parag {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: large;
+        font-weight: 800;
+    }
+
+
+</style>
+
+<div class="main">
+    <h3>Confirmação de Lançamento</h3>
+    <hr />
+    
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NRO_CONTRATO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NRO_CONTRATO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COD_FORNECEDOR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COD_FORNECEDOR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeEmpresa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeEmpresa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeFonecedor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeFonecedor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comprador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comprador)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NROEMPRESA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NROEMPRESA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COD_GESTOR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COD_GESTOR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VALOR_CONTRATO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VALOR_CONTRATO)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOME_ACAO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOME_ACAO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SALDO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SALDO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ID_ACAO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_ACAO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DTA_CONTRATO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DTA_CONTRATO)
+        </dd>
+
+
+    </dl>
+    
+</div>
+<p class="parag">
+    @Html.ActionLink("Confirmar", "LancaContratoNovo", "Acao", new { nrocont = Model.NRO_CONTRATO, nroforn = Model.COD_FORNECEDOR, nroloja = Model.NROEMPRESA, segGest = Model.COD_GESTOR, vlrcont = Model.VALOR_CONTRATO, saldo = Model.SALDO }, htmlAttributes: null) |
+    @Html.ActionLink("Voltar", "Index")
+</p>
